@@ -37,6 +37,9 @@ export const Questions = () => {
       </div>
       <div className="flex justify-end mt-6 mb-2 space-x-2">
         <button className="px-3 py-2 bg-blue-400 rounded-md text-slate-800">
+          Previous Question
+        </button>
+        <button className="px-3 py-2 bg-blue-400 rounded-md text-slate-800">
           Next Question
         </button>
         <button className="px-3 py-2 bg-blue-100 rounded-md text-slate-800">
