@@ -13,9 +13,9 @@ function App() {
                 Quiz App
               </h1>
               <div className="bg-slate-600 p-4 my-4 rounded-md shadow-lg shadow-blue-400 space-y-4">
-                {/* <Forms /> */}
+                <Forms />
                 <Questions />
-                {/* <Result /> */}
+                <Result />
               </div>
             </div>
           </div>
