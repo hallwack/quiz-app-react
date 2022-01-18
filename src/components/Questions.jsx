@@ -30,7 +30,7 @@ export const Questions = () => {
   return (
     <div className="flex flex-col">
       <h1 className="text-slate-100 text-2xl font-medium">
-        Question {currentQuestion + 1}/4
+        Question {currentQuestion + 1}/3
       </h1>
       <div className="my-4 space-y-2">
         <p className="text-slate-100 text-lg">
