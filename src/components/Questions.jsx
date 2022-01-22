@@ -5,7 +5,7 @@ export const Questions = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
 
-  const handleNextQuestion = () => {
+  /* const handleNextQuestion = () => {
     setCurrentQuestion(currentQuestion + 1);
   };
 
@@ -15,15 +15,17 @@ export const Questions = () => {
     }
 
     setCurrentQuestion(currentQuestion - 1);
-  };
+  }; */
 
   const handleAnswerQuestion = (isCorrect) => {
     if (isCorrect) {
-      setScore((score + 1) * 10);
+      setScore(score + 1);
+      console.log(score);
     }
 
-    if (currentQuestion + 1 < questionData.length) {
-      setCurrentQuestion(currentQuestion + 1);
+    const nextQuestion = currentQuestion + 1;
+    if (nextQuestion < questionData.length) {
+      setCurrentQuestion(nextQuestion);
     }
   };
 
@@ -41,7 +43,7 @@ export const Questions = () => {
             <button
               className="py-2 px-3 bg-blue-300 rounded-md text-slate-800 shadow-md"
               key={answerOption.answerText}
-              onClick={handleAnswerQuestion}
+              onClick={() => handleAnswerQuestion(answerOption.isCorrect)}
             >
               {answerOption.answerText}
             </button>
@@ -62,7 +64,7 @@ export const Questions = () => {
           4
         </button>
       </div> */}
-      <div className="flex justify-end mt-6 mb-2 space-x-2">
+      {/* <div className="flex justify-end mt-6 mb-2 space-x-2">
         <button
           className="px-3 py-2 bg-blue-400 rounded-md text-slate-800"
           onClick={handlePreviousQuestion}
@@ -78,7 +80,7 @@ export const Questions = () => {
         <button className="px-3 py-2 bg-blue-100 rounded-md text-slate-800">
           Submit
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };
