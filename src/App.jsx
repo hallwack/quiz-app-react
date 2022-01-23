@@ -1,8 +1,14 @@
+import { useState } from "react";
 import { Forms } from "./components/Forms.jsx";
 import { Questions } from "./components/Questions.jsx";
 import { Result } from "./components/Result.jsx";
+import { QuizContext } from "./context/quiz-context";
 
 function App() {
+  const [name, setName] = useState("");
+  const [gameState, setGameState] = useState("forms");
+  const [score, setScore] = useState(0);
+
   return (
     <div className="App">
       <div className="bg-sky-300 min-h-screen">
@@ -13,9 +19,16 @@ function App() {
                 Quiz App
               </h1>
               <div className="bg-slate-600 p-4 my-4 rounded-md shadow-lg shadow-blue-400 space-y-4">
-                <Forms />
-                <Questions />
-                <Result />
+                <QuizContext.Provider
+                  value={{ name, setName, score, setScore }}
+                >
+                  {gameState == "forms" && <Forms />}
+                  {gameState == "questions" && <Questions />}
+                  {gameState == "result" && <Result />}
+                  {/* <Forms />
+                  <Questions />
+                  <Result /> */}
+                </QuizContext.Provider>
               </div>
             </div>
           </div>

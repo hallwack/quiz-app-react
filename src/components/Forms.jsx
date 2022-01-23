@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { QuizContext } from "../context/quiz-context";
 
 export const Forms = () => {
-  const [name, setName] = useState("");
+  const { name, setName } = useContext(QuizContext);
 
   const handleChangeName = (e) => setName(e.target.value);
 
