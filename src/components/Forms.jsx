@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { QuizContext } from "../context/quiz-context";
 
 export const Forms = () => {
-  const { name, setName } = useContext(QuizContext);
+  const { name, setName, quizState, setQuizState } = useContext(QuizContext);
 
   const handleChangeName = (e) => setName(e.target.value);
 
@@ -30,6 +30,7 @@ export const Forms = () => {
           <button
             type="submit"
             className="px-3 py-2 bg-blue-400 rounded-md text-slate-800"
+            onClick={() => setQuizState("questions")}
           >
             Start Quiz
           </button>

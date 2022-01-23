@@ -6,7 +6,7 @@ import { QuizContext } from "./context/quiz-context";
 
 function App() {
   const [name, setName] = useState("");
-  const [gameState, setGameState] = useState("forms");
+  const [quizState, setQuizState] = useState("forms");
   const [score, setScore] = useState(0);
 
   return (
@@ -20,11 +20,11 @@ function App() {
               </h1>
               <div className="bg-slate-600 p-4 my-4 rounded-md shadow-lg shadow-blue-400 space-y-4">
                 <QuizContext.Provider
-                  value={{ name, setName, score, setScore }}
+                  value={{ name, setName, score, setScore, quizState, setQuizState }}
                 >
-                  {gameState == "forms" && <Forms />}
-                  {gameState == "questions" && <Questions />}
-                  {gameState == "result" && <Result />}
+                  {quizState == "forms" && <Forms />}
+                  {quizState == "questions" && <Questions />}
+                  {quizState == "result" && <Result />}
                   {/* <Forms />
                   <Questions />
                   <Result /> */}

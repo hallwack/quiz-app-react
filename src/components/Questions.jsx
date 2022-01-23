@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { QuizContext } from "../context/quiz-context";
 import questionData from "../model/questionData";
 
 export const Questions = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [score, setScore] = useState(0);
+  const { score, setScore, setQuizState } = useContext(QuizContext);
 
   /* const handleNextQuestion = () => {
     setCurrentQuestion(currentQuestion + 1);
@@ -26,6 +27,8 @@ export const Questions = () => {
     const nextQuestion = currentQuestion + 1;
     if (nextQuestion < questionData.length) {
       setCurrentQuestion(nextQuestion);
+    } else {
+      setQuizState("result");
     }
   };
 
