@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Forms } from "./components/Forms.jsx";
-import { Questions } from "./components/Questions.jsx";
-import { Result } from "./components/Result.jsx";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Forms from "./components/Forms";
+import Questions from "./components/Questions";
+import Result from "./components/Result";
 import { QuizContext } from "./context/quiz-context";
 
 function App() {
@@ -20,13 +21,24 @@ function App() {
               </h1>
               <div className="bg-slate-600 p-4 my-4 rounded-md shadow-lg shadow-blue-400 space-y-4">
                 <QuizContext.Provider
-                  value={{ name, setName, score, setScore, quizState, setQuizState }}
+                  value={{
+                    name,
+                    setName,
+                    score,
+                    setScore,
+                    quizState,
+                    setQuizState,
+                  }}
                 >
-                  {quizState == "forms" && <Forms />}
-                  {quizState == "questions" && <Questions />}
-                  {quizState == "result" && <Result />}
-                  {/* <Forms />
-                  <Questions />
+                  <BrowserRouter>
+                    <Routes>
+                      <Route path="/" element={<Forms />} />
+                      <Route path="quiz" element={<Questions />} />
+                      <Route path="result" element={<Result />} />
+                    </Routes>
+                  </BrowserRouter>
+                  {/* <Forms /> */}
+                  {/* <Questions />
                   <Result /> */}
                 </QuizContext.Provider>
               </div>

@@ -1,10 +1,12 @@
 import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { QuizContext } from "../context/quiz-context";
 import questionData from "../model/questionData";
 
-export const Questions = () => {
+const Questions = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const { score, setScore, setQuizState } = useContext(QuizContext);
+  const navigate = useNavigate();
 
   /* const handleNextQuestion = () => {
     setCurrentQuestion(currentQuestion + 1);
@@ -28,7 +30,7 @@ export const Questions = () => {
     if (nextQuestion < questionData.length) {
       setCurrentQuestion(nextQuestion);
     } else {
-      setQuizState("result");
+      navigate("/result");
     }
   };
 
@@ -87,3 +89,5 @@ export const Questions = () => {
     </div>
   );
 };
+
+export default Questions;

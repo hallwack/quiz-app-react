@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { QuizContext } from "../context/quiz-context";
 
-export const Forms = () => {
+const Forms = () => {
   const { name, setName, quizState, setQuizState } = useContext(QuizContext);
 
   const handleChangeName = (e) => setName(e.target.value);
@@ -27,15 +28,16 @@ export const Forms = () => {
           />
         </div>
         <div className="flex justify-end">
-          <button
-            type="submit"
+          <Link
             className="px-3 py-2 bg-blue-400 rounded-md text-slate-800"
-            onClick={() => setQuizState("questions")}
+            to="/quiz"
           >
             Start Quiz
-          </button>
+          </Link>
         </div>
       </div>
     </form>
   );
 };
+
+export default Forms;

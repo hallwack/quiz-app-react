@@ -2,11 +2,21 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+// import Questions from "./components/Questions";
+// import Result from "./components/Result";
 import reportWebVitals from "./reportWebVitals";
+// import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-      <App />
+    {/* <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="quiz" element={<Questions />} />
+        <Route path="result" element={<Result />} />
+      </Routes>
+    </BrowserRouter> */}
+  <App />
   </React.StrictMode>,
   document.getElementById("root")
 );

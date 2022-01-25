@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { QuizContext } from "../context/quiz-context";
 
-export const Result = () => {
+const Result = () => {
   const { score, setQuizState, name } = useContext(QuizContext);
 
   return (
@@ -11,13 +12,15 @@ export const Result = () => {
         <p className="text-slate-100 text-3xl font-bold">{score}</p>
       </div>
       <div className="flex justify-end">
-        <button
+        <Link
+          to="/"
           className="px-3 py-2 bg-blue-400 rounded-md text-slate-800"
-          onClick={() => setQuizState("forms")}
         >
           Home
-        </button>
+        </Link>
       </div>
     </div>
   );
 };
+
+export default Result;
