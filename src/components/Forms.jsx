@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { QuizContext } from "../context/quiz-context";
 
 const Forms = () => {
-  const { name, setName, quizState, setQuizState } = useContext(QuizContext);
+  const { name, setName } = useContext(QuizContext);
 
   const handleChangeName = (e) => setName(e.target.value);
 

@@ -5,7 +5,7 @@ import questionData from "../model/questionData";
 
 const Questions = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const { score, setScore, setQuizState } = useContext(QuizContext);
+  const { score, setScore } = useContext(QuizContext);
   const navigate = useNavigate();
 
   /* const handleNextQuestion = () => {

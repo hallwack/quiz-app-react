@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { QuizContext } from "../context/quiz-context";
 
 const Result = () => {
-  const { score, setQuizState, name } = useContext(QuizContext);
+  const { score, name } = useContext(QuizContext);
 
   return (
     <div className="flex flex-col">

@@ -7,7 +7,6 @@ import { QuizContext } from "./context/quiz-context";
 
 function App() {
   const [name, setName] = useState("");
-  const [quizState, setQuizState] = useState("forms");
   const [score, setScore] = useState(0);
 
   return (
@@ -26,8 +25,6 @@ function App() {
                     setName,
                     score,
                     setScore,
-                    quizState,
-                    setQuizState,
                   }}
                 >
                   <BrowserRouter>
