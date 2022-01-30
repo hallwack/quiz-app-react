@@ -1,7 +1,7 @@
 import initialState from "./initialState";
 import actionType from "./actionType";
 
-export const rootReducer = (state = initialState, action) => {
+const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionType.HANDLE_ANSWER_QUESTION:
       return {
@@ -26,3 +26,5 @@ export const rootReducer = (state = initialState, action) => {
       break;
   }
 };
+
+export default rootReducer;

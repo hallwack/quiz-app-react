@@ -1,8 +1,13 @@
 import React, { useContext } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { QuizContext } from "../context/quiz-context";
+import handleQuizState from "../redux/actions/quizActions";
 
 export const Forms = () => {
-  const { name, setName, quizState, setQuizState } = useContext(QuizContext);
+  const { name, setName, setQuizState } = useContext(QuizContext);
+
+  const quizState = useSelector((state) => state.quizState);
+  const dispatch = useDispatch();
 
   const handleChangeName = (e) => setName(e.target.value);
 
@@ -10,6 +15,8 @@ export const Forms = () => {
     e.preventDefault();
     console.log({ name });
   };
+
+  console.log(quizState);
 
   return (
     <form onSubmit={handleSubmit}>
@@ -30,7 +37,7 @@ export const Forms = () => {
           <button
             type="submit"
             className="px-3 py-2 bg-blue-400 rounded-md text-slate-800"
-            onClick={() => setQuizState("questions")}
+            onClick={() => dispatch(handleQuizState("questions"))}
           >
             Start Quiz
           </button>
