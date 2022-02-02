@@ -6,7 +6,6 @@ import Result from "./components/Result";
 import { QuizContext } from "./context/quiz-context";
 
 function App() {
-  const [name, setName] = useState("");
   const [score, setScore] = useState(0);
 
   return (
@@ -19,14 +18,7 @@ function App() {
                 Quiz App
               </h1>
               <div className="bg-slate-600 p-4 my-4 rounded-md shadow-lg shadow-blue-400 space-y-4">
-                <QuizContext.Provider
-                  value={{
-                    name,
-                    setName,
-                    score,
-                    setScore,
-                  }}
-                >
+                <QuizContext.Provider value={{ score, setScore }}>
                   <BrowserRouter>
                     <Routes>
                       <Route path="/" element={<Forms />} />
@@ -34,9 +26,6 @@ function App() {
                       <Route path="result" element={<Result />} />
                     </Routes>
                   </BrowserRouter>
-                  {/* <Forms /> */}
-                  {/* <Questions />
-                  <Result /> */}
                 </QuizContext.Provider>
               </div>
             </div>

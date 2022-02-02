@@ -1,14 +1,16 @@
 import React, { useContext } from "react";
+import { connect, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { QuizContext } from "../context/quiz-context";
 
-const Result = () => {
-  const { score, name } = useContext(QuizContext);
+const Result = (props) => {
+  const { score } = useContext(QuizContext);
+  const name = useSelector((state) => state.name);
 
   return (
     <div className="flex flex-col">
       <div className="flex flex-col justify-center items-center space-y-2">
-        <p className="text-slate-100 text-lg">{name}'s Result</p>
+        <p className="text-slate-100 text-lg">{props.name}'s Result</p>
         <p className="text-slate-100 text-3xl font-bold">{score}</p>
       </div>
       <div className="flex justify-end">
@@ -23,4 +25,10 @@ const Result = () => {
   );
 };
 
-export default Result;
+const mapStateToProps = (state) => {
+  return {
+    name: state.name,
+  };
+};
+
+export default connect(mapStateToProps)(Result);
