@@ -5,7 +5,7 @@ const nameReducer = (state = "", action) => {
     case actionTypes.HANDLE_NAME:
       return {
         ...state,
-        name: action.payload,
+        value: action.payload,
       };
     default:
       return state;

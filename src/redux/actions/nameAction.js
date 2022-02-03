@@ -1,10 +1,17 @@
 import actionTypes from "../actionTypes";
 
-const handleName = (payload) => {
+const handleName = (value) => {
+  return {
+    type: actionTypes.HANDLE_NAME,
+    payload: value,
+  };
+};
+
+const handleSubmit = (payload) => {
   return {
     type: actionTypes.HANDLE_NAME,
     payload,
   };
 };
 
-export default handleName;
+export { handleName, handleSubmit };
