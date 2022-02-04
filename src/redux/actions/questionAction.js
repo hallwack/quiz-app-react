@@ -1,10 +1,17 @@
 import actionTypes from "../actionTypes";
 
-const handleQuestion = (payload) => {
+const handleAnswerQuestion = (isCorrect) => {
   return {
-    type: actionTypes.HANDLE_QUESTION,
-    payload,
+    type: actionTypes.HANDLE_ANSWER_QUESTION,
+    isCorrect,
   };
 };
 
-export default handleQuestion;
+const handleCurrentQuestion = (currentQuestion) => {
+  return {
+    type: actionTypes.HANDLE_CURRENT_QUESTION,
+    currentQuestion,
+  };
+};
+
+export { handleAnswerQuestion, handleCurrentQuestion };

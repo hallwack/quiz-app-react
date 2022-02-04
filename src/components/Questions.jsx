@@ -1,9 +1,11 @@
 import React, { useContext, useState } from "react";
+import { connect } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { QuizContext } from "../context/quiz-context";
 import questionData from "../model/questionData";
+import handleScore from "../redux/actions/scoreAction";
 
-const Questions = () => {
+const Questions = (props) => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const { score, setScore } = useContext(QuizContext);
   const navigate = useNavigate();
@@ -22,7 +24,10 @@ const Questions = () => {
 
   const handleAnswerQuestion = (isCorrect) => {
     if (isCorrect) {
+      props.handleScore(props.score + 1);
+      console.log(props.handleScore(props.score + 1))
       setScore(score + 1);
+      // console.log(props.handleScore(score));
       console.log(score);
     }
 
@@ -90,4 +95,16 @@ const Questions = () => {
   );
 };
 
-export default Questions;
+const mapStateToProps = (state) => {
+  return {
+    score: state.score,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleScore: (score) => dispatch(handleScore(score)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Questions);

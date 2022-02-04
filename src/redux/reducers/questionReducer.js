@@ -3,13 +3,13 @@ import initState from "../initState";
 
 const questionReducer = (state = initState, action) => {
   switch (action.type) {
-    case actionTypes.HANDLE_QUESTION:
+    case actionTypes.HANDLE_ANSWER_QUESTION:
       return {
-        ...state,
-        question: state.question,
+        ...state.currentQuestion,
+        isCorrect: action.isCorrect,
       };
     default:
-      return state;
+      return state.isCorrect;
   }
 };
 

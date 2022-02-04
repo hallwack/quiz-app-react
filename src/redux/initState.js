@@ -1,6 +1,6 @@
 const initState = {
   name: "",
-  question: "",
+  currentQuestion: 0,
   score: 0,
 };
 

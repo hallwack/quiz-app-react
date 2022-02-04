@@ -4,8 +4,7 @@ const scoreReducer = (state = 0, action) => {
   switch (action.type) {
     case actionTypes.HANDLE_SCORE:
       return {
-        ...state,
-        score: state.score + 1,
+        score: action.payload,
       };
     default:
       return state;

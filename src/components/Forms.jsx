@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 // import { QuizContext } from "../context/quiz-context";
 import { handleName, handleSubmit } from "../redux/actions/nameAction";
 
@@ -18,6 +18,7 @@ const Forms = (props) => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     props.handleSubmit(name);
+    console.log(props.handleSubmit(name));
     navigate("/quiz");
     console.log({ name });
   };
@@ -59,7 +60,7 @@ const Forms = (props) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     handleName: (e) => dispatch(handleName(e)),
-    handleSubmit: (val) => dispatch(handleSubmit(val)),
+    handleSubmit: (name) => dispatch(handleSubmit(name)),
   };
 };
 
