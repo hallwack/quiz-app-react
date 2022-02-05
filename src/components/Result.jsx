@@ -11,7 +11,7 @@ const Result = (props) => {
     <div className="flex flex-col">
       <div className="flex flex-col justify-center items-center space-y-2">
         <p className="text-slate-100 text-lg">{props.name.name}'s Result</p>
-        <p className="text-slate-100 text-3xl font-bold">{props.score.score}</p>
+        <p className="text-slate-100 text-3xl font-bold">{props.score}</p>
       </div>
       <div className="flex justify-end">
         <Link

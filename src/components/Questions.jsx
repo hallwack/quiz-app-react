@@ -24,8 +24,8 @@ const Questions = (props) => {
 
   const handleAnswerQuestion = (isCorrect) => {
     if (isCorrect) {
-      props.handleScore(props.score + 1);
-      console.log(props.handleScore(props.score + 1))
+      props.handleScore();
+      // console.log(props.handleScore())
       setScore(score + 1);
       // console.log(props.handleScore(score));
       console.log(score);
@@ -103,7 +103,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleScore: (score) => dispatch(handleScore(score)),
+    handleScore: () => dispatch(handleScore()),
   };
 };
 

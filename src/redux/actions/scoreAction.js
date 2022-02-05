@@ -1,9 +1,8 @@
 import actionTypes from "../actionTypes";
 
-const handleScore = (payload) => {
+const handleScore = () => {
   return {
     type: actionTypes.HANDLE_SCORE,
-    payload,
   };
 };
 

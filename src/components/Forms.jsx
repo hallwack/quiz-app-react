@@ -18,7 +18,6 @@ const Forms = (props) => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     props.handleSubmit(name);
-    console.log(props.handleSubmit(name));
     navigate("/quiz");
     console.log({ name });
   };
